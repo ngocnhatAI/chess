@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: row-reverse;  /**/
+    justify-content: center;
+    align-items: center;
+    height: 10vh; 
+    margin: 0;
+    /* 
+    display: flex; 
+    flex-direction: column;  
+    align-items: center;    
+    justify-content: center;  
+    */
+}
+.background-image {
+    background-image: url('2c845a66b8ad2a8aafd288bdc16cd459.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.large-form {
+    width: 80%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the form horizontally */
+    text-align: center; /* Center the form content (e.g., button) */
+    padding: 20px; /* Add padding for spacing */
+}
+.info-panel
+{
+    width: 180px; /* Adjust the width as needed */
+    height: 43g0px; /* Make it the same height as the chessboard */
+    background-color: rgb(240, 201, 169); /* Background color of the table */
+    opacity: 0.9;
+    margin-right: 70px;
+    margin-left: -235px;
+    border: 2px solid #ccc;
+    text-align: center;
+    border: 1px solid black; /* Border around the table */
+    padding: 10px; /* Add some padding to the table content */
+    box-sizing: border-box; /* Include padding in the width/height */
+    border-radius: 5%;
+}
+#reset-button
+{
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    background-color: #bd2020;
+    color: white;
+    border: none;
+    padding: 5px;
+    font-size: 18px;
+    height: 80px;
+    width: 80px;
+    box-shadow: 0 2px 4px darkslategray;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+#reset-button:hover
+{
+    color:rgba(255, 255, 255, 1);
+    background-color:rgba(28, 190, 131, 1);
+    background-position: -100% 100%;
+}
+#ajaxButton2 {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #d19445;
+    color: white;
+    border: none;
+    padding: 5px;
+    font-size: 18px;
+    height: 60px;
+    width: 100px;
+    box-shadow: 0 2px 4px darkslategray;
+    border-radius: 10%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+#ajaxButton2:hover
+{
+    background-color:rgba(28, 190, 131, 1);
+}
+#ajaxButton2:active
+{
+    box-shadow: 0 0 2px darkslategray;
+    transform: translateY(2px);
+}
+#ajaxButton {
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #d19445;
+    color: white;
+    border: none;
+    padding: 5px;
+    font-size: 18px;
+    height: 60px;
+    width: 100px;
+    box-shadow: 0 2px 4px darkslategray;
+    border-radius: 10%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+#ajaxButton:hover
+{
+    background-color:rgba(28, 190, 131, 1);
+}
+#ajaxButton:active
+{
+    box-shadow: 0 0 2px darkslategray;
+    transform: translateY(2px);
+}
+#ajaxButton3 {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #d19445;
+    color: white;
+    border: none;
+    padding: 5px;
+    font-size: 18px;
+    height: 60px;
+    width: 100px;
+    box-shadow: 0 2px 4px darkslategray;
+    border-radius: 10%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+#ajaxButton3:hover
+{
+    background-color:rgba(28, 190, 131, 1);
+}
+#ajaxButton3:active
+{
+    box-shadow: 0 0 2px darkslategray;
+    transform: translateY(2px);
+}
+ul {
+    
+    display: grid;
+    grid-template-columns: 1fr;
+}
+h3
+{
+    font-size: 24px
+}
+.divv {
+    
+    display: flex;
+}
+
+li {
+    list-style: none;
+    margin-bottom: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 0px;
+}
+
+.box {
+    margin: .0px;
+    width: 72px;
+    height: 72px;
+    
+}
+
+#tog {
+    margin: 10px 0px;
+}
+
+.allimg {
+    width: 65px;
+    position: relative;
+    bottom: 5px;
+}
+.chess-board{
+    margin-top: 30px;
+}
+
+.allpawn {
+    
+    transform: scale(1);
+}
+
+.authcont {
+    
+    width: 100vw;
+}
+
+@media (max-width: 650px) {
+    #tog {
+        margin-bottom: 70px;
+    }
+
+    .box {
+        width: 11vw;
+        height: 11vw;
+    }
+
+    .allimg {
+        width: 11vw; 
+    }
+}
