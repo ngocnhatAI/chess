@@ -13,7 +13,7 @@ class ChessAI:
 
 if __name__ == "__main__":
     board = chess.Board()
-    ai = ChessAI(r"C:\Users\pcduc\Downloads\Chess\chess\stockfish\stockfish-windows-x86-64-avx2.exe")  # Thay đổi đường dẫn tới Stockfish phù hợp
+    ai = ChessAI(r"stockfish\stockfish-windows-x86-64-avx2.exe")  # Thay đổi đường dẫn tới Stockfish phù hợp
 
     while not board.is_game_over():
         if board.turn == chess.WHITE:
