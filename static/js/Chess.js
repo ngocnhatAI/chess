@@ -48,10 +48,10 @@ function coloring() {
         a = aside + aup
 
         if (a % 2 == 0) {
-            color.style.backgroundColor = '#FF7C2A'
+            color.style.backgroundColor = '#cf8948'
         }
         if (a % 2 !== 0) {
-            color.style.backgroundColor = '#FFCC9C'
+            color.style.backgroundColor = '#ffcc9c'
         }
 
     })
