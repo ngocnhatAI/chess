@@ -111,27 +111,32 @@
         <div class="table-content">
             <!-- Clock for white -->
             <div class="clock-label">Thời gian của bạn:</div>
-            <div class="clock" id="white-clock">15:00</div>
+            <div class="clock" id="white-clock">10:00</div>
             <!-- Clock for black -->
             <div class="clock-label">Thời gian của máy:</div>
-            <div class="clock" id="black-clock">15:00</div>
+            <div class="clock" id="black-clock">10:00</div>
             <!-- Add your table content here -->
         </div>
-        <h3><button id="reset-button">Đặt lại bàn cờ</button></h3>
+        <h3><button id="reset-button">RESET</button></h3>
         <form method="POST" id="chess-form">
             {% csrf_token %}
-            <button type="button" id="ajaxButton" class="button">
-                Chơi với Máy <i class="fas fa-robot"></i><br>
-                <span class="algorithm">Alpha Beta</span>
-            </button>
-            <button type="button" id="ajaxButton2" class="button">
-                Chơi với Máy <i class="fas fa-user-astronaut"></i><br>
-                <span class="algorithm">Stockfish</span>
-            </button>
-            <button type="button" id="ajaxButton3" class="button button-auto">
-                Máy Đấu Máy <i class="fas fa-robot"></i> ⚔️ <i class="fas fa-robot"></i>
-            </button>
-        </form>        
+            <form>
+                <button type="button" id="ajaxButton" class="button">
+                    <div class="line">Chơi với Máy</div>
+                    <div class="icon"><i class="fas fa-robot"></i></div>
+                    <div class="line">Alpha Beta</div>
+                </button>
+                <button type="button" id="ajaxButton2" class="button">
+                    <div class="line">Chơi với Máy</div>
+                    <div class="icon"><i class="fas fa-user-astronaut"></i></div>
+                    <div class="line">Stockfish</div>
+                </button>
+                <button type="button" id="ajaxButton3" class="button">
+                    <div class="line">Máy Đấu Máy</div>
+                    <div class="icon"><i class="fas fa-robot"></i> ⚔️ <i class="fas fa-robot"></i></div>
+                </button>
+            </form>
+                 
         
     </div>
     <script src="{% static 'js/board.js' %}"></script>

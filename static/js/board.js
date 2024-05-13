@@ -1,5 +1,5 @@
-let whiteTime = 15 * 60; // 15 minutes in seconds
-let blackTime = 15 * 60;
+let whiteTime = 10 * 60; // 15 minutes in seconds
+let blackTime = 10 * 60;
 const whiteClock = document.getElementById('white-clock');
 const blackClock = document.getElementById('black-clock');
 let isWhiteTurn = true

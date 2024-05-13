@@ -47,7 +47,7 @@ def test(request):
 # Tạo instance của ChessAI ở đâu đó có thể truy cập được, ví dụ ở đầu file
 chess_ai = ChessAI(r"stockfish\stockfish-windows-x86-64-avx2.exe")
 
-def mcts_moves(request):
+def stockfish_moves(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body.decode('utf-8'))

@@ -4,7 +4,7 @@ from stockfish import Stockfish
 class ChessAI:
     def __init__(self, path_to_engine):
         self.engine = Stockfish(path_to_engine)
-        self.engine.set_skill_level(100)  # Bạn có thể điều chỉnh mức độ theo ý muốn
+        self.engine.set_skill_level(50)  # Bạn có thể điều chỉnh mức độ theo ý muốn
 
     def get_best_move(self, board):
         fen = board.fen()

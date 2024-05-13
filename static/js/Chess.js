@@ -48,10 +48,10 @@ function coloring() {
         a = aside + aup
 
         if (a % 2 == 0) {
-            color.style.backgroundColor = '#f2d798'
+            color.style.backgroundColor = '#c9ad6f'
         }
         if (a % 2 !== 0) {
-            color.style.backgroundColor = '#c9ad6f'
+            color.style.backgroundColor = '#f2d798'
         }
 
     })
@@ -860,8 +860,8 @@ $(document).ready(function () {
     function updateChessboard(){
         var csrftoken = getCookie('csrftoken');
         var lastMove = moves[moves.length-1];
-        if (selectedAlgorithm === "MCTS") {
-            algorithmUrl = "/mcts_moves/"; // Replace with the actual URL for MCTS moves
+        if (selectedAlgorithm === "stockfish") {
+            algorithmUrl = "/stockfish_moves/"; // Replace with the actual URL for stockfish moves
         } else if(selectedAlgorithm === "test") {
             algorithmUrl = "/test/"; // Replace with the actual URL for alpha-beta moves
         }    
@@ -954,7 +954,7 @@ $(document).ready(function () {
     });
     
     $("#ajaxButton2").click(function (){
-        selectedAlgorithm = "MCTS";
+        selectedAlgorithm = "stockfish";
         setInterval(updateChessboard, 5000);
     });
     
