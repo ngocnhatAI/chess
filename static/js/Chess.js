@@ -48,10 +48,10 @@ function coloring() {
         a = aside + aup
 
         if (a % 2 == 0) {
-            color.style.backgroundColor = '#cf8948'
+            color.style.backgroundColor = '#f2d798'
         }
         if (a % 2 !== 0) {
-            color.style.backgroundColor = '#ffcc9c'
+            color.style.backgroundColor = '#c9ad6f'
         }
 
     })
@@ -541,16 +541,27 @@ document.querySelectorAll('.box').forEach(item => {
         // Toggling the turn
 
         if (tog % 2 !== 0) {
+            document.getElementById('tog').innerText = "Human's Turn"
             count1++;
             isWhiteTurn = true
             whosTurn('W')
+            if (count1 == 1)
+            {
+                updateClock()
+                setInterval(updateClock, 1000);
+            }
             
         }
         if (tog % 2 == 0) {
             isWhiteTurn = false
             count2++
+            document.getElementById('tog').innerText = "Computer's Turn"
             whosTurn('B')
-            
+            if(count2 == 1)
+            {
+                updateClock2()
+                setInterval(updateClock2, 1000);
+            }
         }
 
         reddish()

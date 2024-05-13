@@ -3,6 +3,10 @@
 <html lang="en">
 
 <head>
+    <!-- Kết nối với FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,13 +107,31 @@
     </div>
     
     <div class ="info-panel">
-        <ol>
+        <h2 id="tog">Bảng điều khiển</h2>  
+        <div class="table-content">
+            <!-- Clock for white -->
+            <div class="clock-label">Thời gian của bạn:</div>
+            <div class="clock" id="white-clock">15:00</div>
+            <!-- Clock for black -->
+            <div class="clock-label">Thời gian của máy:</div>
+            <div class="clock" id="black-clock">15:00</div>
+            <!-- Add your table content here -->
+        </div>
+        <h3><button id="reset-button">Đặt lại bàn cờ</button></h3>
+        <form method="POST" id="chess-form">
             {% csrf_token %}
-            <button type="button" id="ajaxButton">Alpha-Beta </button>
-            <button type="button" id="ajaxButton2">Stockfish </button>
-            <button type="button" id="ajaxButton3">Two Machines </button>
-            <button id="reset-button">Reset</button>
-        </ol>
+            <button type="button" id="ajaxButton" class="button">
+                Chơi với Máy <i class="fas fa-robot"></i><br>
+                <span class="algorithm">Alpha Beta</span>
+            </button>
+            <button type="button" id="ajaxButton2" class="button">
+                Chơi với Máy <i class="fas fa-user-astronaut"></i><br>
+                <span class="algorithm">Stockfish</span>
+            </button>
+            <button type="button" id="ajaxButton3" class="button button-auto">
+                Máy Đấu Máy <i class="fas fa-robot"></i> ⚔️ <i class="fas fa-robot"></i>
+            </button>
+        </form>        
         
     </div>
     <script src="{% static 'js/board.js' %}"></script>

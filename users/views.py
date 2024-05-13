@@ -45,7 +45,7 @@ def test(request):
     return JsonResponse({'error': 'Method not allowed'}, status=405)
 
 # Tạo instance của ChessAI ở đâu đó có thể truy cập được, ví dụ ở đầu file
-chess_ai = ChessAI("stockfish/stockfish-windows-x86-64-avx2.exe")
+chess_ai = ChessAI(r"stockfish\stockfish-windows-x86-64-avx2.exe")
 
 def mcts_moves(request):
     if request.method == 'POST':

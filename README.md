@@ -1,8 +1,17 @@
 # How to run a local server ?
-Open new terminal in VScode, run two commands below:
-'pip install -r requirements.txt'
-'python manage.py runserver'
 
+Open a terminal or a Linux server and navigate to your desired directory
+
+Requires dependencies listed in requirements.txt. Install using 'pip install -r requirements.txt'
+
+If it does not work try:
+'pip install django' ,
+'pip install chess' ,
+'pip install asgiref' ,
+'pip install sqlparse' ,
+'pip install typing_extensions' ,
+
+Run using 'python manage.py runserver' from root directory.
 
 # Cấu trúc cơ bản của web
 ChessWeb/chessWeb là file quản lí và deploy web

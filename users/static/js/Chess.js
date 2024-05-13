@@ -48,10 +48,10 @@ function coloring() {
         a = aside + aup
 
         if (a % 2 == 0) {
-            color.style.backgroundColor = '#FF7C2A'
+            color.style.backgroundColor = '#EEEED2'
         }
         if (a % 2 !== 0) {
-            color.style.backgroundColor = '#FFCC9C'
+            color.style.backgroundColor = '#769656'
         }
 
     })
@@ -541,16 +541,27 @@ document.querySelectorAll('.box').forEach(item => {
         // Toggling the turn
 
         if (tog % 2 !== 0) {
+            document.getElementById('tog').innerText = "Human's Turn"
             count1++;
             isWhiteTurn = true
             whosTurn('W')
+            if (count1 == 1)
+            {
+                updateClock()
+                setInterval(updateClock, 1000);
+            }
             
         }
         if (tog % 2 == 0) {
             isWhiteTurn = false
             count2++
+            document.getElementById('tog').innerText = "Computer's Turn"
             whosTurn('B')
-            
+            if(count2 == 1)
+            {
+                updateClock2()
+                setInterval(updateClock2, 1000);
+            }
         }
 
         reddish()
@@ -606,7 +617,6 @@ function unconvertToSAN(move)
 }
 
 // Moving the element
-mask = false
 document.querySelectorAll('.box').forEach(item => {
 
     item.addEventListener('click', function () {
@@ -626,7 +636,6 @@ document.querySelectorAll('.box').forEach(item => {
                     arr.push('0')
                     aup = eval(arr.join(''))
                     a = aside + aup
-                    
                     if (tanId[1] > 6)
                         {
                         if (tanText == `Wpawn` && aup == 800 ) {
@@ -642,55 +651,48 @@ document.querySelectorAll('.box').forEach(item => {
                             console.log(sanMoveAll)
                         }
                     }
-                    if(tanText == 'Wking'){
-                        if(whiteCastleChance==true && document.getElementById('b106').innerText === '' && document.getElementById('b105').innerText === '' && document.getElementById('b108').innerText === 'Wrook' ){
-                            document.getElementById('b106').innerText = 'Wrook'
-                            document.getElementById('b107').innerText = 'Wking'
-                            document.getElementById('b108').innerText = ''
-                            document.getElementById('b105').innerText = ''
-                            coloring()
-                            insertImage()
-                            moves.push('O-O')
-                            console.log(moves)
-                            mask = true
-                        }
-                        if(whiteCastleChance==true && a==103 && document.getElementById('b105') == 'Wking' &&document.getElementById('b104').innerText === '' && document.getElementById('b103').innerText === '' && document.getElementById('b102').innerText=== '' && document.getElementById('b101').innerText=== 'Wrook'){
-                            document.getElementById('b104').innerText = 'Wrook'
-                            document.getElementById('b103').innerText = 'Wking'
-                            document.getElementById('b101').innerText = ''
-                            document.getElementById('b105').innerText = ''
-                            document.getElementById('b102').innerText = ''
-                            coloring()
-                            insertImage()
-                            moves.push('O-O-O')
-                            mask = true
-                        }
+            
+                    if(whiteCastleChance==true && a==107 && document.getElementById('b106').innerText== '' && document.getElementById('b105').innerText== 'Wking' && document.getElementById('b108').innerText== 'Wrook' && document.getElementById('b107') == ''){
+                        document.getElementById('b106').innerText = 'Wrook'
+                        document.getElementById('b107').innerText = 'Wking'
+                        document.getElementById('b108').innerText = ''
+                        document.getElementById('b105').innerText = ''
+                        coloring()
+                        insertImage()
+                        moves.push('O-O')
                     }
-                    if (tanText == 'Bking')
-                    {
-                        if(blackCastleChance==true && a==807 && document.getElementById('b806').innerText== '' && document.getElementById('b807').innerText== '' && document.getElementById('b808').innerText== 'Brook'){
-                            document.getElementById('b806').innerText = 'Brook'
-                            document.getElementById('b807').innerText = 'Bking'
-                            document.getElementById('b808').innerText = ''
-                            document.getElementById('b805').innerText = ''
-                            coloring()
-                            insertImage()
-                            moves.push('O-O')
-        
-                        }
-                        if(blackCastleChance==true && a==803 && document.getElementById('b804').innerText== '' && document.getElementById('b803').innerText== '' && document.getElementById('b802').innerText== '' && document.getElementById('b801').innerText== 'Brook'){
-                            document.getElementById('b804').innerText = 'Brook'
-                            document.getElementById('b803').innerText = 'Bking'
-                            document.getElementById('b801').innerText = ''
-                            document.getElementById('b805').innerText = ''
-                            document.getElementById('b802').innerText = ''
-                            coloring()
-                            insertImage()
-                            moves.push('O-O-O')
-        
-                        }
+                    if(whiteCastleChance==true && a==103 && document.getElementById('b105') == 'Wking' &&document.getElementById('b104').innerText === '' && document.getElementById('b103').innerText === '' && document.getElementById('b102').innerText=== '' && document.getElementById('b101').innerText=== 'Wrook'){
+                        console.log('test')
+                        document.getElementById('b104').innerText = 'Wrook'
+                        document.getElementById('b103').innerText = 'Wking'
+                        document.getElementById('b101').innerText = ''
+                        document.getElementById('b105').innerText = ''
+                        document.getElementById('b102').innerText = ''
+                        coloring()
+                        insertImage()
+                        moves.push('O-O-O')
                     }
-                    
+                    if(blackCastleChance==true && a==807 && document.getElementById('b806').innerText== '' && document.getElementById('b807').innerText== '' && document.getElementById('b808').innerText== 'Brook'){
+                        document.getElementById('b806').innerText = 'Brook'
+                        document.getElementById('b807').innerText = 'Bking'
+                        document.getElementById('b808').innerText = ''
+                        document.getElementById('b805').innerText = ''
+                        coloring()
+                        insertImage()
+                        moves.push('O-O')
+    
+                    }
+                    if(blackCastleChance==true && a==803 && document.getElementById('b804').innerText== '' && document.getElementById('b803').innerText== '' && document.getElementById('b802').innerText== '' && document.getElementById('b801').innerText== 'Brook'){
+                        document.getElementById('b804').innerText = 'Brook'
+                        document.getElementById('b803').innerText = 'Bking'
+                        document.getElementById('b801').innerText = ''
+                        document.getElementById('b805').innerText = ''
+                        document.getElementById('b802').innerText = ''
+                        coloring()
+                        insertImage()
+                        moves.push('O-O-O')
+    
+                    }
                 
                     if (tanId[1] < 3){
                         if (tanText == `Bpawn` && aup == 100  ) {
@@ -706,9 +708,9 @@ document.querySelectorAll('.box').forEach(item => {
                             
                         }
                     }
-                    
+
                     if (item2.style.backgroundColor == 'palegreen' && item2.innerText.length == 0) {
-                    
+                        
 
                         document.getElementById(tanId).innerText = ''
                         item2.innerText = tanText
@@ -722,7 +724,6 @@ document.querySelectorAll('.box').forEach(item => {
                         console.log(moves)
 
                     }
-                    
 
                     else if (item2.style.backgroundColor == 'palegreen') {
                         if(item2.id=='b103'){
@@ -845,18 +846,12 @@ $(document).ready(function () {
     $("#reset-button").click(function () {
         resetBoard();
     });
-    var selectedAlgorithm = ''
-    function updateChessboard(){
+    $("#ajaxButton").click(function (){
         var csrftoken = getCookie('csrftoken');
-        var lastMove = moves[moves.length-1];
-        if (selectedAlgorithm === "MCTS") {
-            algorithmUrl = "/mcts_moves/"; // Replace with the actual URL for MCTS moves
-        } else if(selectedAlgorithm === "test") {
-            algorithmUrl = "/test/"; // Replace with the actual URL for alpha-beta moves
-        }    
+        var lastMove = moves.pop();
         $.ajax({
             type: "POST",
-            url: algorithmUrl,
+            url: "/test/",
             data: JSON.stringify({'moves': [lastMove]}),
             contentType: "application/json; charset=utf-8", // Set content type to JSON
             dataType: "json", // Expect JSON response
@@ -867,7 +862,7 @@ $(document).ready(function () {
                 // Handle the response from the backend
                 var bestMove = data.best_move;
                 console.log('Best Move:', bestMove);
-                if(bestMove === 'O-O' || bestMove === 'e8g8')
+                if(bestMove === 'O-O' || bestMove === 'e1g1')
                 {
                     document.getElementById('b806').innerText = 'Brook'
                     document.getElementById('b807').innerText = 'Bking'
@@ -902,50 +897,7 @@ $(document).ready(function () {
                 console.error("Server response:", status);
             }
         })
-       
-    }
-    function machineVsMachine() {
-        var csrftoken = getCookie('csrftoken');
-        var lastMove = moves[moves.length-1];
-        mlmoves = []
-        $.ajax({
-            type: "POST",
-            url: "/match_moves/", // Replace with the actual URL for match moves
-            data: JSON.stringify({'moves': lastMove}),
-            contentType: "application/json; charset=utf-8", // Set content type to JSON
-            dataType: "json", // Expect JSON response
-            headers: {
-                "X-CSRFToken": csrftoken // Include the CSRF token in the request headers
-            },
-            success: function (data) {
-                var bestMove = data.best_move;
-                console.log('Best Move:', bestMove);
-                c1 = bestMove[0] + bestMove[1]
-                c2 = bestMove[2] + bestMove[3]
-                fromMove = unconvertToSAN(c1)
-                toMove = unconvertToSAN(c2)
-                
-                moveForBlack(fromMove, toMove)
-            },
-            error: function (xhr, status, error) {
-                console.error(xhr.responseText);
-                console.error("Error message:", error);
-                console.error("Server response:", status);
-            }
-        });
-    }
-    $("#ajaxButton3").click(function (){
-        setInterval(machineVsMachine, 3000);
-    });
-    $("#ajaxButton").click(function (){
-        selectedAlgorithm = "test"
-        setInterval(updateChessboard, 4000);
-    });
-    
-    $("#ajaxButton2").click(function (){
-        selectedAlgorithm = "MCTS";
-        setInterval(updateChessboard, 5000);
-    });
+    })
     
 });
 function moveForBlack(fromMove, toMove) {
