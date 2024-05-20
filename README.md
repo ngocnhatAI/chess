@@ -1,6 +1,8 @@
 # Hướng dẫn chạy
 Sử dụng terminal và chạy 2 lệnh dưới dây
+
 'pip install -r requirements.txt' (download các tài nguyên cần thiết)
+
 'python manage.py runserver' (chạy ứng dụng)
 
 # Cấu trúc cơ bản của web
