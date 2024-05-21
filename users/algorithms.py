@@ -2,6 +2,7 @@ import chess
 import chess.pgn
 import chess.svg
 
+
 def piece_value(piece):
     # Assign values to chess pieces for a basic evaluation function
     if piece.piece_type == chess.PAWN:

@@ -7,6 +7,7 @@ import json
 import chess
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import redirect
+
 def handle_moves(request):
     return render(request, 'index.html')
 def reset_board(request):
@@ -17,6 +18,7 @@ def reset_board(request):
     return JsonResponse({'success': True, 'message': 'Board reset successfully'})
 alpha_beta_board = alpha_beta_Board()
 board = chess.Board()
+
 def test(request):
     if request.method == 'POST':
         try:

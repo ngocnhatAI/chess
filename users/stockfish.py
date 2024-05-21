@@ -12,6 +12,7 @@ class ChessAI:
         return self.engine.get_best_move()
 
 if __name__ == "__main__":
+    
     board = chess.Board()
     ai = ChessAI(r"stockfish\stockfish-windows-x86-64-avx2.exe")  # Thay đổi đường dẫn tới Stockfish phù hợp
 

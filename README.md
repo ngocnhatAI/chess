@@ -15,5 +15,3 @@ users có những file quan trọng cần lưu ý gồm :
 - users/views.py : dùng để giao tiếp (truyền và nhận dữ liệu) giữa phần giao diện và thuật toán python
 - users/urls.py : Import các hàm từ views.py vào để thực thi
 - users/algorithms.py : Chứa thuật toán Alpha Beta
-
-
